@@ -1,0 +1,38 @@
+:root { --bg:#0b1220; --card:#172439; --edge:#354762; --light:#f5f8ff; --muted:#b2bed1; }
+* { box-sizing: border-box; }
+body { margin:0; font-family: system-ui, Segoe UI, Arial, sans-serif; color:var(--light); background:radial-gradient(circle at 50% 0,#263a5e,var(--bg) 60%); min-height:100vh; }
+.arena { width:min(1000px,calc(100% - 32px)); margin:0 auto; padding:32px 0 24px; }
+.cabecalho { text-align:center; margin:0 0 26px; }
+.etiqueta { font-size:11px; letter-spacing:.12em; color:#6be1d2; font-weight:750; }
+h1 { font-size:clamp(31px,6vw,50px); line-height:1.1; margin:12px 0; }
+h2 { margin:0 0 10px; }
+p { line-height:1.45; }
+.cabecalho p, small, footer { color:var(--muted); }
+.tabuleiro { display:grid; grid-template-columns:1fr 60px 1fr; gap:12px; align-items:center; }
+.combatente, .controle, .painel-mensagem { background:rgba(23,36,57,.94); border:1px solid var(--edge); border-radius:17px; padding:24px; box-shadow:0 8px 26px #0002; }
+.combatente { text-align:center; }
+.avatar { font-size:72px; }
+.classe { font-size:11px; font-weight:700; color:#8ea2f7; letter-spacing:.12em; }
+.combatente h2 { font-size:22px; }
+.indicador { font-weight:750; margin-bottom:8px; }
+.barra { height:16px; background:#071020; border-radius:999px; overflow:hidden; border:1px solid #51617b; margin-bottom:14px; }
+.preenchimento { height:100%; transition:width .3s ease; }
+.vida { background:linear-gradient(90deg,#158c7b,#46e0b1); }
+.inimigo { background:linear-gradient(90deg,#be3e5e,#fd7386); }
+.versus { text-align:center; font-size:28px; font-weight:900; color:#f5c66b; }
+.controle, .painel-mensagem { margin-top:20px; }
+.controle-titulo { display:flex; justify-content:space-between; gap:10px; align-items:center; }
+.controle-titulo h2,.painel-mensagem h2 { font-size:19px; }
+#turno { color:#c7d1e2; font-weight:700; }
+.aviso { color:#ffda92; background:#47372955; border:1px solid #987340; border-radius:9px; padding:9px 12px; font-weight:650; margin:12px 0 0; }
+.acoes { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:12px; }
+.botao { padding:16px 10px; border:0; border-radius:11px; color:white; font-size:17px; font-weight:750; cursor:pointer; }
+.atacar { background:#d45652; } .defender { background:#4b78d2; } .curar { background:#15987e; }
+.botao:hover:not(:disabled) { filter:brightness(1.12); transform:translateY(-1px); }
+.botao:disabled { opacity:.45; cursor:not-allowed; }
+.reiniciar { display:block; margin:17px auto 0; padding:8px 12px; background:transparent; border:1px solid #6b7b97; border-radius:8px; color:#fff; cursor:pointer; }
+.painel-mensagem { border-color:#8d75bd; }
+#mensagem { min-height:38px; margin-bottom:8px; }
+.resultado { margin:0; font-weight:850; color:#f4ce6b; }
+footer { text-align:center; margin-top:24px; font-size:12px; }
+@media(max-width:650px) { .tabuleiro{ grid-template-columns:1fr; } .versus{padding:0;} .acoes{ grid-template-columns:1fr; } .combatente{padding:16px;} .avatar{font-size:52px;} }
